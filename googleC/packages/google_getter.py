@@ -64,7 +64,8 @@ website = {
     'mafra':'www.mafra.go.kr',
     'mk':'www.mk.co.kr',
     'monthly.chosun':'monthly.chosun.com',
-    'msn':'www.msn.com'
+    'msn':'www.msn.com',
+    'news.naver':'news.naver.com',
     'naver':'www.naver.com',
     'newsnjoy':'www.newsnjoy.or.kr',
     'newstof':'newstof.com',
