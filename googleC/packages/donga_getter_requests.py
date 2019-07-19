@@ -20,8 +20,7 @@ def get_link_from_news_title(page_num, URL, output_file):
         URL_with_page_num = URL[: position+1] + str(current_page_num) \
                             + URL[position+1 :]
         source_code_from_URL = requests.get(URL_with_page_num).text
-        soup = BeautifulSoup(source_code_from_URL, 'html.parser', -1,
-                             encoding='utf-8')
+        soup = BeautifulSoup(source_code_from_URL, 'html.parser')
         for title in soup.find_all('p', 'tit'):
             title_link = title.select('a')
             article_URL = title_link[0]['href']
@@ -31,7 +30,7 @@ def get_link_from_news_title(page_num, URL, output_file):
 # 기사 본문 내용 긁어오기 (위 함수 내부에서 기사 본문 주소 받아 사용되는 함수)
 def get_text(URL, output_file):
     source_code_from_url = requests.get(URL).text
-    soup = BeautifulSoup(source_code_from_url, 'html.parser', -1, encoding='utf-8')
+    soup = BeautifulSoup(source_code_from_url, 'html.parser')
     content_of_article = soup.select('div.article_txt')
     for item in content_of_article:
         string_item = str(item.find_all(text=True))
@@ -60,5 +59,4 @@ def main(argv):
  
  
 if __name__ == '__main__':
-    main(sys.argv)
- 
+    main(sys.argv) 
